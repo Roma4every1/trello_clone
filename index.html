@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="board">
+        <div class="tabs">
+            <div class="tab" id="toDo">
+                <span class="tab-title">ToDo</span>
+                <div class="tab-list"> 
+            
+                </div>
+                <form class="tab-form-edit">
+                    <textarea class="tab-form-edit-textarea"></textarea>
+                    <button class="tab-form-edit-save">✔</button>
+                    <button class="tab-form-edit-cancel">✖</button>
+                  </form>
+                <form class="tab-form">
+                    <textarea class="tab-form-textarea" placeholder="Ввести заголовок для этой карточки"></textarea>
+                    <div class="tab-form-buttons">
+                        <button class="tab-form-add-card" id="addToDo">Добавить карточку</button>
+                        <button class="tab-form-cancel-card">✖</button>
+                    </div>
+                </form>
+                <div class="tab-add-btn"> <span> + </span> Добавить карточку </div>
+            </div>
+            <div class="tab" id="inProgress">
+                <span class="tab-title">InProgress</span>
+                <div class="tab-list">
+                    <!-- <div class="list-item"></div> -->
+                </div>
+                <form class="tab-form-edit">
+                    <textarea class="tab-form-edit-textarea"></textarea>
+                    <button class="tab-form-edit-save">✔</button>
+                    <button class="tab-form-edit-cancel">✖</button>
+                  </form>
+                <form class="tab-form">
+                    <textarea class="tab-form-textarea" placeholder="Ввести заголовок для этой карточки"></textarea>
+                    <div class="tab-form-buttons">
+                        <button class="tab-form-add-card" id="addInProgress">Добавить карточку</button>
+                        <button class="tab-form-cancel-card">✖</button>
+                    </div>
+                </form>
+                <div class="tab-add-btn"> <span> + </span> Добавить карточку </div>
+            </div>
+            <div class="tab" id="done">
+                <span class="tab-title">Done</span>
+                <div class="tab-list">
+                    <!-- <div class="list-item"></div> -->
+                </div>
+                <form class="tab-form-edit">
+                    <textarea class="tab-form-edit-textarea"></textarea>
+                    <button class="tab-form-edit-save">✔</button>
+                    <button class="tab-form-edit-cancel">✖</button>
+                  </form>
+                <form class="tab-form">
+                    <textarea class="tab-form-textarea" placeholder="Ввести заголовок для этой карточки"></textarea>
+                    <div class="tab-form-buttons">
+                        <button class="tab-form-add-card" id="addDone">Добавить карточку</button>
+                        <button class="tab-form-cancel-card">✖</button>
+                    </div>
+                </form>
+                <div class="tab-add-btn"> <span> + </span> Добавить карточку </div>
+            </div>
+            <div class="tab" id="deleted">
+                <span class="tab-title">Deleted</span>
+                <div class="tab-list">
+                    <!-- <div class="list-item"></div> -->
+                </div>
+                  <form class="tab-form-edit">
+                    <textarea class="tab-form-edit-textarea"></textarea>
+                    <button class="tab-form-edit-save">✔</button>
+                    <button class="tab-form-edit-cancel">✖</button>
+                  </form>
+                <form class="tab-form">
+                    <textarea class="tab-form-textarea" placeholder="Ввести заголовок для этой карточки"></textarea>
+                    <div class="tab-form-buttons">
+                        <button class="tab-form-add-card" id="addDeleted" >Добавить карточку</button>
+                        <button class="tab-form-cancel-card">✖</button>
+                    </div>
+                </form>
+                <!-- <div class="tab-add-btn"> <span> + </span> Добавить карточку </div>  -->
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
