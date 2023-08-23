@@ -1,5 +1,4 @@
 const rendertabs = (data) => {
-  let tabList = [...document.querySelectorAll(".tab-list")];
   for (let id in data) {
     let tab = document.querySelector(`#${id} .tab-list`);
     tab.innerHTML = "";
@@ -7,7 +6,7 @@ const rendertabs = (data) => {
       tab.innerHTML += `<div class="list-item" draggable="true" id="${item.id}"> <div class="list-item-text">${item.title}</div>
       
       <div class="taskButtons">
-      ${id !== "deleted" ? ` <button class="taskDel">−
+      ${!item.isDelete ? ` <button class="taskDel">−
       </button>
       <button class="taskEdit">🖊</button>
   </div>`:`
@@ -45,6 +44,7 @@ const addingTask = (event, data, Id) => {
     data[Id].push({
       id: Date.now(),
       title: textArea.value,
+      isDelete: false,
     });
     textArea.value = "";
     event.target.closest(".tab-form-add-card").style.display = "none";
@@ -125,10 +125,10 @@ deleteAndRestoreHandler = (event, data, wrapperId, restore = false) => {
   const id = event.target.closest(".list-item").id;
   
   const item = data[listId].find((item) => item.id === +id);
-  
   data[listId] = data[listId].filter( (item) => item.id !== +id);
   data[listPushId].push(item);
-  
+  item.isDelete = !item.isDelete; 
+  console.log(!item.isDelete);
   rendertabs(data);
   localStorage.setItem("data", JSON.stringify(data));
   }  
@@ -214,6 +214,7 @@ const init = () => {
         const item = data[currentId][itemIndex];
         data[currentId].splice(itemIndex, 1);
         data[targetId].push(item);
+        targetId === 'deleted'? item.isDelete = true : item.isDelete = false; 
         rendertabs(data);
         localStorage.setItem("data", JSON.stringify(data));
       }})})
